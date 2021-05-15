@@ -1,0 +1,39 @@
+{
+  "name": "react-native-pinning-sha256",
+  "title": "React Native Pinning SHA 256",
+  "version": "1.0.1",
+  "description": "Validate SHA 256",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movibe/react-native-pinning-sha256.git",
+    "baseUrl": "https://github.com/movibe/react-native-pinning-sha256"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "Willian Ribeiro Angelo",
+    "email": "agfoccus@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "le Labrador",
+      "email": "nlt2390@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.61.5"
+  }
+}
