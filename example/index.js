@@ -1,5 +1,6 @@
 import { registerRootComponent } from "expo";
 import { NativeModules } from "react-native";
+import "react-native-gesture-handler";
 
 global.NativeModules = NativeModules;
 import App from "./App";
