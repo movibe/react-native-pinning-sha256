@@ -1,4 +1,4 @@
-declare module 'react-native-pinning-ssl' {
+declare module 'react-native-pinning-sha256' {
     import React from "react"
     export interface IValidSSL {
         url: string;
