@@ -1,7 +1,7 @@
 {
   "name": "react-native-pinning-sha256",
   "title": "React Native Pinning SHA 256",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validate SHA 256",
   "main": "index.js",
   "scripts": {
