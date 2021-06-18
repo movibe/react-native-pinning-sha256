@@ -1,5 +1,8 @@
+#import <Foundation/Foundation.h>
 #import "RNPinningSsl.h"
 #import "NSURLAuthenticationChallenge+Fingerprint.h"
+#import <React/RCTEventEmitter.h>
+#import <React/RCTBridgeModule.h>
 
 @implementation RNPinningSsl
 
@@ -14,6 +17,7 @@ static NSString *serviceName = @"RNPinningSsl";
 
 NSArray *hashes;
 NSArray *domainNames;
+NSURLSession *session;
 BOOL isValid;
 
 NSError * sslPinningError(NSString *errMsg)
@@ -21,7 +25,6 @@ NSError * sslPinningError(NSString *errMsg)
   NSError *error = [NSError errorWithDomain:serviceName code:200 userInfo:@{@"reason": errMsg}];
   return error;
 }
-
 
 RCT_EXPORT_METHOD(getStatus:(NSString *)inputUrl
                   forHashes:(NSArray *)inputHashes
@@ -34,8 +37,8 @@ RCT_EXPORT_METHOD(getStatus:(NSString *)inputUrl
   isValid = NO;
   NSURL *url = [NSURL URLWithString: inputUrl];
   
-  NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-  NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
   
   NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
   

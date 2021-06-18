@@ -16,6 +16,16 @@ export const HomeScreen = () => {
           Axios Interceptor
         </Text>
       </Button>
+
+      <Button
+        bg="red"
+        mb={10}
+        onPress={() => navigation.navigate("AxiosReject")}
+      >
+        <Text color="#fff" fontSize={16} fontWeight="bold">
+          Axios Reject Interceptor
+        </Text>
+      </Button>
     </Div>
   );
 };
